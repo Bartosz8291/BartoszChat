@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BartoszChat</title>
+    <meta name="description" content="a chat">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn-icons-png.freepik.com/256/1913/1913401.png?ga=GA1.1.432713600.1709982032">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Default dark mode background color */
+            color: #fff; /* Default dark mode text color */
+        }
+        
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333; /* Default dark mode background color */
+            color: #fff; /* Default dark mode text color */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .white-mode {
+            background-color: #fff; /* White mode background color */
+            color: #333; /* White mode text color */
+        }
+        
+        .message {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chatContainer">
+        <!-- Chat messages will be dynamically added here -->
+    </div>
+    <script>
+        function toggleWhiteMode() {
+            var chatContainer = document.getElementById('chatContainer');
+            chatContainer.classList.toggle('white-mode');
+        }
+        
+        function addMessage(message, sender) {
+            var chatContainer = document.getElementById('chatContainer');
+            var messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.innerText = sender + ': ' + message;
+            chatContainer.appendChild(messageElement);
+        }
+        
+        // Example usage
+        addMessage('Hello there!', 'User1');
+        addMessage('Hi! How can I help you?', 'User2');
+        toggleWhiteMode(); // Toggle white mode
+        addMessage('This is white mode now.', 'System');
+        toggleWhiteMode(); // Toggle back to dark mode
+        addMessage('Back to dark mode.', 'System');
+    </script>
+</body>
+</html>
